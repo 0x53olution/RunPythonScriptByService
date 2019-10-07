@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Logic;
 
 namespace ScriptRunner
 {
@@ -10,6 +11,8 @@ namespace ScriptRunner
     {
         static void Main(string[] args)
         {
+            var runMyScript = new RunScript();
+            Console.WriteLine(runMyScript.Start());
         }
     }
 }
