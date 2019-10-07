@@ -1,6 +1,8 @@
 import sys
 import time
-import datetime
+from datetime import datetime
+
+creation_time = datetime.now()
 
 if __name__ == "__main__":
     argument_error_message = """
@@ -16,8 +18,8 @@ This script takes takes parameters:
     username = str(sys.argv[1])
     password = str(sys.argv[2])
     environment = str(sys.argv[3])
-    creation_time = datetime.now()
 
     print("Creation time: " + str(creation_time.strftime("%d.%m.%y %H:%M:%S")))
-    time.sleep(1000)
-    print("Job done!")
+    time.sleep(5)
+    duration_time = datetime.now() - creation_time
+    print("Job is done by {} on platform {}! Duration: {} seconds".format(username, environment, str(duration_time.seconds)))
